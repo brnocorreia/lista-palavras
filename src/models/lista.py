@@ -65,3 +65,31 @@ class Lista:
             p = p.general_next
         if not hasMatch:
             print('lista vazia')
+    
+    def basic_remove(self, word: str):
+        pant = None
+        p = self.head
+        while (p != None) and (p.value != word):
+            pant = p
+            p = p.basic_next
+        if (p == None):
+            return False
+        if (pant == None):
+            self.head = p.basic_next
+        else:
+            pant.basic_next = p.basic_next
+        return True
+
+    def general_remove(self, word: str):
+        pant = None
+        p = self.head
+        while (p != None) and (p.value != word):
+            pant = p
+            p = p.general_next
+        if (p == None):
+            return False
+        if (pant == None):
+            self.head = p.general_next
+        else:
+            pant.general_next = p.general_next
+        return True

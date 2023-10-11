@@ -27,7 +27,8 @@ def main():
                 regulator.lister_by_alphabetic_regulator(init, end)
 
             case 'r':
-                pass
+                word = input().strip()
+                regulator.remove_regulator(word)
 
             case _:
                 pass
