@@ -1,5 +1,3 @@
-import copy
-
 from src.models.lista import Lista
 from src.utils.sorter import Sorter
 
@@ -12,7 +10,7 @@ class Regulator:
         self.lista_4 = Lista()
         self.sort = Sorter()
 
-    def insert_regulator(self, word: str):
+    def insert_controller(self, word: str):
         length = len(word)
         if length <= 5:
             self.insert(word, self.lista_1)
@@ -31,39 +29,33 @@ class Regulator:
         res, _ = self.lista_4.general_insert(node)
         return print(f'palavra inserida: {word}')
     
-    def lister_general_regulator(self, lista: int):
+    def lister_general_controller(self, lista: int):
         match lista:
             case 1:
-                copy_list = copy.deepcopy(self.lista_1)
-                self.sort.sort_list(copy_list, 'basic')
-                copy_list.display()
+                self.sort.sort_list(self.lista_1, 'basic')
+                self.lista_1.display()
             
             case 2:
-                copy_list = copy.deepcopy(self.lista_2)
-                self.sort.sort_list(copy_list, 'basic')
-                copy_list.display()
+                self.sort.sort_list(self.lista_2, 'basic')
+                self.lista_2.display()
             
             case 3:
-                copy_list = copy.deepcopy(self.lista_3)
-                self.sort.sort_list(copy_list, 'basic')
-                copy_list.display()
+                self.sort.sort_list(self.lista_3, 'basic')
+                self.lista_1.display()
             
             case 4:
-                copy_list = copy.deepcopy(self.lista_4)
-                self.sort.sort_list(copy_list, 'general')
-                copy_list.display_all()
+                self.sort.sort_list(self.lista_4, 'general')
+                self.lista_1.display_all()
     
-    def lister_by_number_regulator(self, number: int):
-        copy_list = copy.deepcopy(self.lista_4)
-        self.sort.sort_list(copy_list, 'general')
-        copy_list.display_by_number(number)
+    def lister_by_number_controller(self, number: int):
+        self.sort.sort_list(self.lista_4, 'general')
+        self.lista_4.display_by_number(number)
 
-    def lister_by_alphabetic_regulator(self, init: str, end: str):
-        copy_list = copy.deepcopy(self.lista_4)
-        self.sort.sort_list(copy_list, 'general')
-        copy_list.display_by_alphabetic(init, end)
+    def lister_by_alphabetic_controller(self, init: str, end: str):
+        self.sort.sort_list(self.lista_4, 'general')
+        self.lista_4.display_by_alphabetic(init, end)
 
-    def remove_regulator(self, word: str):
+    def remove_controller(self, word: str):
         length = len(word)
         if length <= 5:
             self.remove(word, self.lista_1)
