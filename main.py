@@ -1,4 +1,3 @@
-#pylint: disable=wildcard-import, undefined-variable
 from src import *
 
 def main():
