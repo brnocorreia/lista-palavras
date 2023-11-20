@@ -41,11 +41,11 @@ class Regulator:
             
             case 3:
                 self.sort.sort_list(self.lista_3, 'basic')
-                self.lista_1.display()
+                self.lista_3.display()
             
             case 4:
                 self.sort.sort_list(self.lista_4, 'general')
-                self.lista_1.display_all()
+                self.lista_4.display_all()
     
     def lister_by_number_controller(self, number: int):
         self.sort.sort_list(self.lista_4, 'general')
